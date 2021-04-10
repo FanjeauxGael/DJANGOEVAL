@@ -22,7 +22,6 @@ class  ParticularCallForm(ModelForm):
 
   class Meta:
     model = Call
-
     fields={
       'Date',
       'is_Missing',

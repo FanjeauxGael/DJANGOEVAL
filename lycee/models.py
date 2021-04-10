@@ -77,12 +77,28 @@ class Student(models.Model):
   def __str__(self):
     return'{} {} {}'.format (self.first_name,self.last_name,self.email)
 
+class GeneralCall(models.Model):
+
+  Date = models.DateField(
+    blank=False,
+    null=True,
+    help_text = 'yyyy-mm-ddd'
+  )
+  cursus = models.ForeignKey(
+    Cursus,
+    on_delete=models.CASCADE,
+    null=True
+  )
 
 class Call (models.Model):
   is_Missing = models.BooleanField(
       null = True
   )
-  Date = models.DateField()
+  Date = models.DateField(
+    blank=False,
+    null=True,
+    help_text = 'yyyy-mm-ddd'
+  )
   Reason = models.CharField(
     max_length=50,
     blank=False,
@@ -94,3 +110,9 @@ class Call (models.Model):
     on_delete=models.CASCADE,
     null=True
   )
+  generalCall = models.ForeignKey(
+    GeneralCall,
+    on_delete=models.CASCADE,
+    null=True
+  )
+

@@ -24,5 +24,10 @@ urlpatterns = [
     path('lycee/<int:cursus_id>', views.detail, name="detail"),
     path('lycee/student/<int:student_id>', views.detail_student, name="detail_student"),
     path('lycee/student/create',StudentCreateView.as_view(),name='create_student'),
-    path('lycee/particularCall/<int:cursus_id>', ParticularCallCreateView.as_view(), name='particular_call')
+    path('lycee/particularCall/', ParticularCallCreateView.as_view(), name='particular_call'),
+    path('lycee/Call/<int:cursus_id>', views.call, name='call'), 
+    path('lycee/student/edit/<int:student_id>', views.editStudent, name='editetu'),
+    path('lycee/ListCall/', views.callListAll, name='listAll'),
+    path('lycee/ListCallByCursus/<int:cursus_id>', views.callListbycursus, name='listbyCursus '),
+    path('lycee/DetailCall/<int:call_id>', views.detailCall, name='detailCall ')
 ]

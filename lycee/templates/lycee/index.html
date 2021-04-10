@@ -9,13 +9,16 @@
     <div class="container">
       {%for cursus in liste%}
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-5">
           <div class="row">
             <div class="col">
               <a href='lycee/{{cursus.id}}'>{{cursus.name}}</a>
             </div>
             <div class="col">
-              <a class="btn btn-warning" href='lycee/appel'>Call of roll</a>
+              <a class="btn btn-warning" href='lycee/Call/{{cursus.id}}'>Call of roll</a>
+            </div>
+            <div class="col">
+              <a class="btn btn-secondary" href='lycee/ListCallByCursus/{{cursus.id}}'>List Call</a>
             </div>
           </div>
           </div>
@@ -24,10 +27,13 @@
       <div class="container">
         <div style="width : 15%;">
           <div class="row">
-                <a href="" class="btn btn-block btn-danger">Paticular Call of roll</a>
+                <a href="lycee/particularCall/" class="btn btn-block btn-danger">Paticular Call of roll</a>
           </div>
           <div class="row">
                 <a href="lycee/student/create" class="btn btn-block btn-primary">Create a student</a>
+          </div>
+          <div class="row">
+                <a href="lycee/ListCall/" class="btn btn-block btn-dark">List Call all</a>
           </div>
         </div>
       </div>

@@ -2,19 +2,27 @@
 <!--{% load static %}-->
 {% if liste%}
   {% block title %}
-    Call of roll
+    Call of roll {{cursus.name}}
   {% endblock%}
 
   {% block content %}
-    <form mehthod="POST">
+   <div class="container">
+    <form method="POST">
       {% csrf_token %}
-      <!-- crpss side request forgeries -->
-      <!-- https://docs.djangoproject.com/fr/3.1/ref/csrf/ -->
-      {{form.as_p}}
-      <div class="boutons">
-        <button class="btn btn-success radius right" type="submit">Submit</button>
-      </div>
+      <input class="form-control" type="date" id="date" name="date" value="jj/mm/aaaa">
+      {% for etu in listEtu %}
+        <div class="row">
+          <div class="col">
+            <input type="checkbox" name="etu{{etu.id}}"> 
+            <label for="etu{{etu.id}}">{{etu.first_name}} {{etu.last_name}}</label> 
+          </div>
+        </div>
+      {% endfor %}
+      <button class="alert alert-success" type='submit' name="submit" value="Submit">
+          Submit
+      </button>
     </form>
+    </div>
   {% endblock%}
 {% else %}
   <p>No student to call</p>

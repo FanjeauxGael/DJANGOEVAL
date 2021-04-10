@@ -1,0 +1,29 @@
+{% extends 'master.html' %}
+<!--{% load static %}-->
+{% if liste%}
+  {% block title %}
+    List of call {{cursus.name}} {{cursus.scholar_year}}
+  {% endblock%}
+
+  {% block content %}
+    <div class="container">
+      <ul>
+        {%for call in listcall %}
+
+          <li><a href='/lycee/DetailCall/{{call.id}}'>{{call.Date}}</a></li>
+
+
+        {%endfor%}
+      </ul>  
+      <div class="container">
+        <div class="container">
+          <div class="row">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endblock%}
+{% else %}
+  <p>No student to show</p>
+{% endif %}
