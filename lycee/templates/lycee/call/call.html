@@ -1,0 +1,21 @@
+{% extends 'master.html' %}
+<!--{% load static %}-->
+{% if liste%}
+  {% block title %}
+    Call of roll
+  {% endblock%}
+
+  {% block content %}
+    <form mehthod="POST">
+      {% csrf_token %}
+      <!-- crpss side request forgeries -->
+      <!-- https://docs.djangoproject.com/fr/3.1/ref/csrf/ -->
+      {{form.as_p}}
+      <div class="boutons">
+        <button class="btn btn-success radius right" type="submit">Submit</button>
+      </div>
+    </form>
+  {% endblock%}
+{% else %}
+  <p>No student to call</p>
+{% endif %}

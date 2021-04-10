@@ -1,0 +1,29 @@
+{% extends 'master.html' %}
+<!--{% load static %}-->
+{% if liste%}
+  {% block title %}
+    {{cursus.name}} {{cursus.scholar_year}}
+  {% endblock%}
+
+  {% block content %}
+    <div class="container">
+      <ul>
+        {%for etu in listEtu %}
+
+          <li><a href='student/{{etu.id}}'>{{etu.first_name}} {{etu.last_name}}</a></li>
+
+
+        {%endfor%}
+      </ul>  
+      <div class="container">
+        <div class="container">
+          <div class="row">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endblock%}
+{% else %}
+  <p>No student to show</p>
+{% endif %}
