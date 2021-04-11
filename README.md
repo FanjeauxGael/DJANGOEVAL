@@ -1,3 +1,4 @@
+Django 3.1.5
 #Pour la documentation
 
 La documentation projet se trouve dans le dossier doc du projet présent sur le dépôt git 
