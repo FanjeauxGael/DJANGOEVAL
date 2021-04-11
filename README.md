@@ -1,3 +1,7 @@
+#Pour la documentation
+
+La documentation projet se trouve dans le dossier doc du projet présent sur le dépôt git 
+
 # Developing Django on Repl.it
 
 - Fork this template to get started
